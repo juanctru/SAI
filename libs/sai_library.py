@@ -1,4 +1,3 @@
-from sai_globals import *
 from sai_methods.deflt_dev_methods import *
 
 
@@ -15,7 +14,7 @@ class Device:
                                    dev_value=dev_value,
                                    dev_area=dev_area,
                                    dev_method=assign_method(dev_type),
-                                   )
+                                   icon='',)
 
     def __delete__(self, instance):
         del instance
@@ -51,9 +50,6 @@ class Device:
         self.set_status(dev_status)
         return 0
 
-    def set_properties(self, dev_parameters=None):
-        self.dev_properties.update(dev_parameters)
-        return 0
 
     # ***** getters methods *****
     def get_name(self):
@@ -81,7 +77,8 @@ class HomeArea:
 
     def __init__(self, ha_name=''):
         self.ha_properties = dict(ha_name=ha_name,
-                                  ha_devices=dict(),)
+                                  ha_devices=dict(),
+                                  icon='',)
 
     def set_name(self, ha_name=''):
         self.ha_properties['ha_name'] = ha_name
@@ -107,7 +104,8 @@ class Home:
 
     def __init__(self, home_name=''):
         self.home = dict(home_name=home_name,
-                         homeareas=dict(),)
+                         homeareas=dict(),
+                         icon='',)
 
     def add_area(self, home_area=None):
         self.home['homeareas'][home_area.get_name()] = home_area

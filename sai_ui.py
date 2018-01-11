@@ -1,7 +1,7 @@
-import cgi
-import cgitb
-import sys
-import libs.sai_library as lib
+# import cgi
+# import cgitb
+# import sys
+# import libs.sai_library as lib
 import sai_methods.uii_methods as uimethods
 
 homeobj = []

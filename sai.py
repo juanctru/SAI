@@ -1,6 +1,6 @@
 __author__ = 'Juan Carlos Trujillo'
 
-from multiprocessing import Pool, TimeoutError
+# from multiprocessing import Pool, TimeoutError
 from platform import system
 import sai_ui as ui
 import sai_methods.core_methods as corelib
