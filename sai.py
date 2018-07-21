@@ -2,8 +2,9 @@ __author__ = 'Juan Carlos Trujillo'
 
 # from multiprocessing import Pool, TimeoutError
 from platform import system
-import sai_ui as ui
+import sai_console_ui as ui
 import sai_methods.core_methods as corelib
+from sai_globals import *
 
 systemOS = system().lower()
 
@@ -11,15 +12,18 @@ core = corelib.core_state_machine
 
 
 def saicore():
-    for process in core:
+    for process, method in core.iteritems():
         print process
+        method()
 
 
 def start():
     while True:
-        ui.ui_main()
+        r = ui.ui_main()
+        if r == EXIT_CMD:
+            print 'Exiting...'
+            return
         saicore()
-
 
 
 if __name__ == '__main__':

@@ -111,6 +111,15 @@ class Home:
         self.home['homeareas'][home_area.get_name()] = home_area
         return 0
 
+
+    def get_areas_list(self):
+        return self.home['homeareas'].keys()
+
+
+    def get_areas_obj(self):
+        return [area_obj for area_obj in self.home['homeareas'].itervalues()]
+
+
     def get_name(self):
         return self.home['home_name']
 # ********************************************************************************

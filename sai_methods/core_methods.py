@@ -1,12 +1,10 @@
-from sai_ui import *
+from sai_console_ui import *
 from sai_globals import *
 
 
 def chkdevstat():
-    devices = homedevices
-    for device in devices:
-        print device.get_name()
-        device.method_call(action=CHKSTAT)
+    print "Here will check device status"
+    # device.method_call(action=CHKSTAT)
     return 0
 
 
